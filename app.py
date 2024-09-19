@@ -50,6 +50,7 @@ opening_time = datetime.strptime(restricted_times_df.loc[restricted_times_df['da
 # Retrieve the training info
 training_description = trainings_df.loc[trainings_df['name'] == training_choice, 'description'].values[0]
 training_id = trainings_df.loc[trainings_df['name'] == training_choice, 'trainingID'].values[0]
+training_price = trainings_df.loc[trainings_df['name'] == training_choice, 'price'].values[0]
 
 # Check if it is whitin restricted times:
 open =  end_datetime.time() <= closing_time or start_datetime.time() >= opening_time
