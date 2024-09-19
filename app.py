@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-import locale
 from datetime import datetime, timedelta, time, date
-
-locale.setlocale(locale.LC_TIME, 'da_DK.UTF-8')
 
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
