@@ -59,7 +59,8 @@ day_bookings = bookings_df[bookings_df['date'] == start_date.strftime('%Y-%m-%d'
 free = not ((day_bookings['time_start'] < end_datetime.strftime('%H:%M')) & (day_bookings['time_end'] > start_datetime.strftime('%H:%M'))).any()
 
 if open and free:
-    st.write(f'Der er ledigt til {training_description} på {weekday_name} den {start_datetime.day}/{start_datetime.month} fra klokken {start_datetime.hour:02d}:{start_datetime.minute:02d} til klokken {end_datetime.hour:02d}:{end_datetime.minute:02d}.')
+    st.write(f"Der er ledigt til **{training_description}** på **{weekday_name}** den **{start_datetime.day}/{start_datetime.month}** fra klokken **{start_datetime.hour:02d}:{start_datetime.minute:02d}** til klokken **{end_datetime.hour:02d}:{end_datetime.minute:02d}**.")
+    st.write(f"**Pris per deltager:** {training_price} kr")
     with st.form("my_form"):
         navn = st.text_input('Navn')
         nummer = st.text_input('Telefonnummer')
