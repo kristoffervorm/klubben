@@ -97,13 +97,13 @@ else:
 def login(username, password):
     if username == st.secrets.credentials["username"] and password == st.secrets.credentials["password"]:
         # Display bookings table
-        st.subheader("Bookings")
-        st.dataframe(bookings_df)
+        st.sidebar.subheader("Bookings")
+        st.sidebar.dataframe(bookings_df)
         # Display users table
-        st.subheader("Users")
-        st.dataframe(users_df)
+        st.sidebar.subheader("Users")
+        st.sidebar.dataframe(users_df)
     else:
-        st.error("Forkert brugernavn eller kodeord")
+        st.sidebar.error("Forkert brugernavn eller kodeord")
 
 # login form
 st.sidebar.subheader('Træner login')
